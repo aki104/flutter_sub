@@ -4,20 +4,38 @@ import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:mbo/const/image.dart';
 import 'package:mbo/provider/app_info/app_info_provider.dart';
+import 'package:mbo/provider/life_cycle/life_cycle_provider.dart';
 import 'package:mbo/provider/preference/preference_provider.dart';
+import 'package:mbo/ui/splash/screen.dart';
 import 'package:mbo/util/key/navigation_key.dart';
 import 'package:mbo/util/key/scaffold_key.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+enum FlavorType{
+  dev('dev'),
+  stg('stg'),
+  prod('prod');
+  const FlavorType(this.name);
+  final String name;
+}
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // await dotenv.load(fileName: '.env');
 
+
+  ///環境別設定
+  const flavorName = String.fromEnvironment('flavor');
+  if(flavorName == FlavorType.dev.name) {
+    await dotenv.load(fileName: '.env_dev');
+  } else if(flavorName == FlavorType.stg.name) {
+    await dotenv.load(fileName: '.env_stg');
+  } else if(flavorName == FlavorType.prod.name) {
+    await dotenv.load(fileName: '.env');
+  }
+
+  ///同期処理するための処理
   late final SharedPreferences sharedPreferences;
   late final PackageInfo packageInfo;
   AndroidDeviceInfo? androidDeviceInfo;
@@ -49,31 +67,22 @@ class App extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // ref.listen<AppLifecycleState>(
-    //   appLifecycleProvider,
-    //       (previous, next) => debugPrint(' $next'),
-    // );
-    ref.watch(appInfoProvider).init();
+    ref.listen<AppLifecycleState>(
+      appLifecycleProvider,
+          (previous, next) {
+            debugPrint(' previous$previous');
+            debugPrint(' next$next');
+          },
+    );
+
     return  MaterialApp(
       key: NavigationKey.navigationKey,
       scaffoldMessengerKey: ScaffoldKey.scaffoldMessengerKey,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:  Scaffold(
-        body: Center(child:
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(ImagePath.image1),
-          SvgPicture.asset(
-              ImagePath.svg1,
-              width: 30,
-              color: Colors.blue,
-              semanticsLabel: 'A red up arrow'
-          )
-          ],
-        ),),
+      home:  const Scaffold(
+        body: SplashScreen(),
       ),
     );
   }
