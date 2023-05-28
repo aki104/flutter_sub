@@ -11,7 +11,7 @@ class Root extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-      final userState = ref.read(userStateProvider);
+      final userState = ref.watch(userStateProvider);
       return userState.map(
           init: (_) {return  const CupertinoActivityIndicator();},
           unauthenticated: (_) {
@@ -21,7 +21,7 @@ class Root extends ConsumerWidget {
           authenticated: (_) {
             // return const BottomBaseScreen();
             return const Scaffold(
-              body: Center(child: Text('root画面'),),
+              body: Center(child: Text('home画面'),),
             );
           });
     }

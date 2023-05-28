@@ -20,6 +20,7 @@ mixin _$LoginState {
       throw _privateConstructorUsedError;
   TextEditingController? get passwordController =>
       throw _privateConstructorUsedError;
+  ErrorStatus get error => throw _privateConstructorUsedError;
   String get mailErrorMsg => throw _privateConstructorUsedError;
   String get passwordErrorMsg => throw _privateConstructorUsedError;
   bool get isValidation => throw _privateConstructorUsedError;
@@ -39,10 +40,13 @@ abstract class $LoginStateCopyWith<$Res> {
   $Res call(
       {TextEditingController? mailController,
       TextEditingController? passwordController,
+      ErrorStatus error,
       String mailErrorMsg,
       String passwordErrorMsg,
       bool isValidation,
       bool isLoading});
+
+  $ErrorStatusCopyWith<$Res> get error;
 }
 
 /// @nodoc
@@ -60,6 +64,7 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
   $Res call({
     Object? mailController = freezed,
     Object? passwordController = freezed,
+    Object? error = null,
     Object? mailErrorMsg = null,
     Object? passwordErrorMsg = null,
     Object? isValidation = null,
@@ -74,6 +79,10 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
           ? _value.passwordController
           : passwordController // ignore: cast_nullable_to_non_nullable
               as TextEditingController?,
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as ErrorStatus,
       mailErrorMsg: null == mailErrorMsg
           ? _value.mailErrorMsg
           : mailErrorMsg // ignore: cast_nullable_to_non_nullable
@@ -92,6 +101,14 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
               as bool,
     ) as $Val);
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ErrorStatusCopyWith<$Res> get error {
+    return $ErrorStatusCopyWith<$Res>(_value.error, (value) {
+      return _then(_value.copyWith(error: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -105,10 +122,14 @@ abstract class _$$_LoginStateCopyWith<$Res>
   $Res call(
       {TextEditingController? mailController,
       TextEditingController? passwordController,
+      ErrorStatus error,
       String mailErrorMsg,
       String passwordErrorMsg,
       bool isValidation,
       bool isLoading});
+
+  @override
+  $ErrorStatusCopyWith<$Res> get error;
 }
 
 /// @nodoc
@@ -124,6 +145,7 @@ class __$$_LoginStateCopyWithImpl<$Res>
   $Res call({
     Object? mailController = freezed,
     Object? passwordController = freezed,
+    Object? error = null,
     Object? mailErrorMsg = null,
     Object? passwordErrorMsg = null,
     Object? isValidation = null,
@@ -138,6 +160,10 @@ class __$$_LoginStateCopyWithImpl<$Res>
           ? _value.passwordController
           : passwordController // ignore: cast_nullable_to_non_nullable
               as TextEditingController?,
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as ErrorStatus,
       mailErrorMsg: null == mailErrorMsg
           ? _value.mailErrorMsg
           : mailErrorMsg // ignore: cast_nullable_to_non_nullable
@@ -164,6 +190,7 @@ class _$_LoginState implements _LoginState {
   const _$_LoginState(
       {this.mailController = null,
       this.passwordController = null,
+      this.error = const ErrorStatus.noError(),
       this.mailErrorMsg = '',
       this.passwordErrorMsg = '',
       this.isValidation = false,
@@ -175,6 +202,9 @@ class _$_LoginState implements _LoginState {
   @override
   @JsonKey()
   final TextEditingController? passwordController;
+  @override
+  @JsonKey()
+  final ErrorStatus error;
   @override
   @JsonKey()
   final String mailErrorMsg;
@@ -190,7 +220,7 @@ class _$_LoginState implements _LoginState {
 
   @override
   String toString() {
-    return 'LoginState(mailController: $mailController, passwordController: $passwordController, mailErrorMsg: $mailErrorMsg, passwordErrorMsg: $passwordErrorMsg, isValidation: $isValidation, isLoading: $isLoading)';
+    return 'LoginState(mailController: $mailController, passwordController: $passwordController, error: $error, mailErrorMsg: $mailErrorMsg, passwordErrorMsg: $passwordErrorMsg, isValidation: $isValidation, isLoading: $isLoading)';
   }
 
   @override
@@ -202,6 +232,7 @@ class _$_LoginState implements _LoginState {
                 other.mailController == mailController) &&
             (identical(other.passwordController, passwordController) ||
                 other.passwordController == passwordController) &&
+            (identical(other.error, error) || other.error == error) &&
             (identical(other.mailErrorMsg, mailErrorMsg) ||
                 other.mailErrorMsg == mailErrorMsg) &&
             (identical(other.passwordErrorMsg, passwordErrorMsg) ||
@@ -217,6 +248,7 @@ class _$_LoginState implements _LoginState {
       runtimeType,
       mailController,
       passwordController,
+      error,
       mailErrorMsg,
       passwordErrorMsg,
       isValidation,
@@ -233,6 +265,7 @@ abstract class _LoginState implements LoginState {
   const factory _LoginState(
       {final TextEditingController? mailController,
       final TextEditingController? passwordController,
+      final ErrorStatus error,
       final String mailErrorMsg,
       final String passwordErrorMsg,
       final bool isValidation,
@@ -242,6 +275,8 @@ abstract class _LoginState implements LoginState {
   TextEditingController? get mailController;
   @override
   TextEditingController? get passwordController;
+  @override
+  ErrorStatus get error;
   @override
   String get mailErrorMsg;
   @override

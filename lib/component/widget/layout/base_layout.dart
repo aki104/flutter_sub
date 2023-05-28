@@ -5,6 +5,7 @@ import 'package:mbo/component/widget/layout/statefull_wrapper.dart';
 import 'package:mbo/util/extension/context.dart';
 
 import '../../../const/color.dart';
+import '../../../util/design/text_style.dart';
 
 class BaseLayout extends StatelessWidget {
   const BaseLayout(
@@ -72,7 +73,7 @@ class BaseLayout extends StatelessWidget {
                   ),
                   Text(
                     'loading',
-                    // style: textStyle([white, fontSize20]),
+                    style: textStyle([white, fontSize20]),
                   )
                 ],
               ),

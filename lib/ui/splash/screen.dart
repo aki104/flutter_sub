@@ -4,9 +4,9 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mbo/util/extension/context.dart';
 
+import '../../component/module/key/navigation_key.dart';
 import '../../provider/app_info/app_info_provider.dart';
 import '../../util/design/size_config.dart';
-import '../../util/key/navigation_key.dart';
 import '../../util/navigator/page_navigator.dart';
 import '../root/screen.dart';
 

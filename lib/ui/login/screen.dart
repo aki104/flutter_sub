@@ -19,7 +19,7 @@ class LoginScreen extends ConsumerWidget {
     final state = ref.watch(loginProvider);
     final notifier = ref.read(loginEventHandlerProvider);
     return BaseLayout(
-      onInit: notifier.init,
+      onInit: notifier.onCreate,
       body: GestureDetector(
         onTap: () {
           final FocusScopeNode currentScope = FocusScope.of(context);
@@ -30,7 +30,7 @@ class LoginScreen extends ConsumerWidget {
         child: SafeArea(
           child: SingleChildScrollView(
             padding: const EdgeInsets.all(16.0),
-            reverse: true,
+            // reverse: true,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -54,8 +54,7 @@ class LoginScreen extends ConsumerWidget {
                   onPressed: () {
                     notifier.onTapLoginButton(
                         onSuccess: () {
-                          // PageNavigator.pushReplacement(
-                          //     widget: const BottomBaseScreen(), context: context);
+                          //TODO:ログインできた時の処理
                         },
                         onError: () {
                           //TODO:ログインできなかった時の処理

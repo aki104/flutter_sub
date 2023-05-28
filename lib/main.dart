@@ -8,10 +8,11 @@ import 'package:mbo/provider/app_info/app_info_provider.dart';
 import 'package:mbo/provider/life_cycle/life_cycle_provider.dart';
 import 'package:mbo/provider/preference/preference_provider.dart';
 import 'package:mbo/ui/splash/screen.dart';
-import 'package:mbo/util/key/navigation_key.dart';
-import 'package:mbo/util/key/scaffold_key.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import 'component/module/key/navigation_key.dart';
+import 'component/module/key/scaffold_key.dart';
 
 enum FlavorType{
   dev('dev'),

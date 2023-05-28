@@ -15,9 +15,11 @@ class StatefulWrapperState extends State<StatefulWrapper> {
 
   @override
   void initState() {
-    if (widget.onInit != null) {
-      widget.onInit?.call();
-    }
+    Future(() async {
+      if (widget.onInit != null) {
+        widget.onInit?.call();
+      }
+    });
     super.initState();
   }
 
