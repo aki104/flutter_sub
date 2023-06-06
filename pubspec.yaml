@@ -36,7 +36,7 @@ dependencies:
   flutter_riverpod: ^2.2.0
   flutter_dotenv: ^5.0.2
   freezed_annotation: ^2.2.0
-  json_annotation: ^4.8.0
+  json_annotation: ^4.8.1
   device_info_plus: ^9.0.1
   package_info_plus: ^3.0.3
   pull_to_refresh: ^2.0.0
@@ -44,6 +44,7 @@ dependencies:
   dio: ^5.1.1
   flutter_svg: ^2.0.6
   intl: ^0.18.0
+  connectivity_plus: ^4.0.1
 
 dev_dependencies:
   flutter_test:
@@ -73,6 +74,7 @@ flutter:
     - .env
     - .env_dev
     - .env_stg
+    - stub/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

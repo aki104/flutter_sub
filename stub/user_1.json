@@ -1,0 +1,13 @@
+{
+    "status": "success",
+    "data": {
+        "id": "0",
+        "name": "テスト太郎",
+        "birthday": "1990-05-10",
+        "mail": "a@a.jp",
+        "age": 20,
+        "phone_number": "090-2222-1111",
+        "post_code": "1234567",
+        "address": "東京都-渋谷区-恵比寿１丁目"
+    }
+}

@@ -75,15 +75,19 @@ class App extends ConsumerWidget {
             debugPrint(' next$next');
           },
     );
-
     return  MaterialApp(
-      key: NavigationKey.navigationKey,
       scaffoldMessengerKey: ScaffoldKey.scaffoldMessengerKey,
+      navigatorKey: NavigationKey.navigationKey,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:  const Scaffold(
-        body: SplashScreen(),
+      home:  const Stack(
+        children: [
+          Scaffold(
+            body: SplashScreen(),
+          ),
+
+        ],
       ),
     );
   }

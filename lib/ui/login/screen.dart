@@ -7,7 +7,6 @@ import '../../component/widget/input_form/validation_form.dart';
 import '../../component/widget/layout/base_layout.dart';
 import '../../component/widget/space.dart';
 import '../../util/design/text_style.dart';
-import '../../util/navigator/page_navigator.dart';
 import 'event/event.dart';
 
 

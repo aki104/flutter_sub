@@ -18,7 +18,6 @@ class SplashScreen extends ConsumerStatefulWidget {
 }
 
 class _SplashScreenState extends ConsumerState<SplashScreen> {
-
   @override
   void initState() {
     appInitialize();
@@ -34,8 +33,9 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
   void appInitialize() {
     ///アプリの初期処理はここで///
     print('envTest: ${dotenv.get('TEST')}');
-    ref.read(appInfoProvider).getAppInfo();//アプリ、デバイス情報取得
-    SizeConfig.init(NavigationKey.navigationKey.currentContext?.screenSize);//画面サイズ取得
+    ref.read(appInfoProvider).getAppInfo(); //アプリ、デバイス情報取得
+    SizeConfig.init(
+        NavigationKey.navigationKey.currentContext?.screenSize); //画面サイズ取得
     ///========================///
   }
 
@@ -44,14 +44,14 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
     return const Scaffold(
       // backgroundColor: Colors.white,
       body: Center(
-          child:Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('Splash画面'),
-              CupertinoActivityIndicator(),
-              Text('loading')
-            ],
-          )),
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text('Splash画面'),
+          CupertinoActivityIndicator(),
+          Text('loading')
+        ],
+      )),
     );
   }
 }

@@ -6,6 +6,7 @@ import 'package:mbo/util/extension/context.dart';
 
 import '../../../const/color.dart';
 import '../../../util/design/text_style.dart';
+import '../loading/cupertino_loading.dart';
 
 class BaseLayout extends StatelessWidget {
   const BaseLayout(
@@ -59,26 +60,7 @@ class BaseLayout extends StatelessWidget {
           ),
         ),
         if (isLoading)
-          Container(
-            width: context.screenWidth,
-            height: context.screenHeight,
-            color: AppColor.black.withOpacity(0.3),
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const CupertinoActivityIndicator(
-                    color: AppColor.white,
-                    radius: 30,
-                  ),
-                  Text(
-                    'loading',
-                    style: textStyle([white, fontSize20]),
-                  )
-                ],
-              ),
-            ),
-          )
+          const Loading()
       ],
     );
   }

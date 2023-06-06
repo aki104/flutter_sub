@@ -9,14 +9,17 @@ class ErrorStatus with _$ErrorStatus {
   const factory ErrorStatus.noError() = NoError;
 
   /// ネットワークエラー
-  const factory ErrorStatus.network() = Network;
+  const factory ErrorStatus.networkError() = NetworkError;
 
   /// リソース無し(ステータスコード404)
-  const factory ErrorStatus.notFound() = NotFound;
+  const factory ErrorStatus.notFoundError() = NotFoundError;
 
-  /// サーバエラー
-  const factory ErrorStatus.server() = Server;
+  /// サーバエラー(メンテナンスモード)
+  const factory ErrorStatus.serverError() = ServerError;
+
+  /// アップデートエラー(強制アップデート時)
+  const factory ErrorStatus.updateError() = UpdateError;
 
   /// 未知エラー
-  const factory ErrorStatus.unknown() = Unknown;
+  const factory ErrorStatus.unknownError() = UnknownError;
 }

@@ -10,4 +10,4 @@
   }
 }
 
-typedef Arg<T> = T;
+typedef Arg<T>  = T;

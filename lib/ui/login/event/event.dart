@@ -1,9 +1,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:mbo/util/show_method/snack_bar.dart';
 
 import '../../../component/module/interface/event_handler.dart';
 import '../../../provider/user_state/user_state_provider.dart';
 import '../../../util/error/error_handler.dart';
-import '../../../util/show_method.dart';
 import '../../../util/validation/validation.dart';
 import '../state/notifier.dart';
 
@@ -35,7 +35,7 @@ class LoginEventHandler extends EventHandler{
     if(!isValidate){
       login(onSuccess: onSuccess, onError: onError);
     } else {
-      ShowMethod.showSnackBar('入力エラー');
+      AppSnackBar.show('入力エラー');
     }
   }
 

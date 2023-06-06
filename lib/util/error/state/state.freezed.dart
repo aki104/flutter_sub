@@ -19,56 +19,62 @@ mixin _$ErrorStatus {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() noError,
-    required TResult Function() network,
-    required TResult Function() notFound,
-    required TResult Function() server,
-    required TResult Function() unknown,
+    required TResult Function() networkError,
+    required TResult Function() notFoundError,
+    required TResult Function() serverError,
+    required TResult Function() updateError,
+    required TResult Function() unknownError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? noError,
-    TResult? Function()? network,
-    TResult? Function()? notFound,
-    TResult? Function()? server,
-    TResult? Function()? unknown,
+    TResult? Function()? networkError,
+    TResult? Function()? notFoundError,
+    TResult? Function()? serverError,
+    TResult? Function()? updateError,
+    TResult? Function()? unknownError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? noError,
-    TResult Function()? network,
-    TResult Function()? notFound,
-    TResult Function()? server,
-    TResult Function()? unknown,
+    TResult Function()? networkError,
+    TResult Function()? notFoundError,
+    TResult Function()? serverError,
+    TResult Function()? updateError,
+    TResult Function()? unknownError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(NoError value) noError,
-    required TResult Function(Network value) network,
-    required TResult Function(NotFound value) notFound,
-    required TResult Function(Server value) server,
-    required TResult Function(Unknown value) unknown,
+    required TResult Function(NetworkError value) networkError,
+    required TResult Function(NotFoundError value) notFoundError,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(UpdateError value) updateError,
+    required TResult Function(UnknownError value) unknownError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(NoError value)? noError,
-    TResult? Function(Network value)? network,
-    TResult? Function(NotFound value)? notFound,
-    TResult? Function(Server value)? server,
-    TResult? Function(Unknown value)? unknown,
+    TResult? Function(NetworkError value)? networkError,
+    TResult? Function(NotFoundError value)? notFoundError,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(UpdateError value)? updateError,
+    TResult? Function(UnknownError value)? unknownError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NoError value)? noError,
-    TResult Function(Network value)? network,
-    TResult Function(NotFound value)? notFound,
-    TResult Function(Server value)? server,
-    TResult Function(Unknown value)? unknown,
+    TResult Function(NetworkError value)? networkError,
+    TResult Function(NotFoundError value)? notFoundError,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(UpdateError value)? updateError,
+    TResult Function(UnknownError value)? unknownError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -129,10 +135,11 @@ class _$NoError implements NoError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() noError,
-    required TResult Function() network,
-    required TResult Function() notFound,
-    required TResult Function() server,
-    required TResult Function() unknown,
+    required TResult Function() networkError,
+    required TResult Function() notFoundError,
+    required TResult Function() serverError,
+    required TResult Function() updateError,
+    required TResult Function() unknownError,
   }) {
     return noError();
   }
@@ -141,10 +148,11 @@ class _$NoError implements NoError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? noError,
-    TResult? Function()? network,
-    TResult? Function()? notFound,
-    TResult? Function()? server,
-    TResult? Function()? unknown,
+    TResult? Function()? networkError,
+    TResult? Function()? notFoundError,
+    TResult? Function()? serverError,
+    TResult? Function()? updateError,
+    TResult? Function()? unknownError,
   }) {
     return noError?.call();
   }
@@ -153,10 +161,11 @@ class _$NoError implements NoError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? noError,
-    TResult Function()? network,
-    TResult Function()? notFound,
-    TResult Function()? server,
-    TResult Function()? unknown,
+    TResult Function()? networkError,
+    TResult Function()? notFoundError,
+    TResult Function()? serverError,
+    TResult Function()? updateError,
+    TResult Function()? unknownError,
     required TResult orElse(),
   }) {
     if (noError != null) {
@@ -169,10 +178,11 @@ class _$NoError implements NoError {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(NoError value) noError,
-    required TResult Function(Network value) network,
-    required TResult Function(NotFound value) notFound,
-    required TResult Function(Server value) server,
-    required TResult Function(Unknown value) unknown,
+    required TResult Function(NetworkError value) networkError,
+    required TResult Function(NotFoundError value) notFoundError,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(UpdateError value) updateError,
+    required TResult Function(UnknownError value) unknownError,
   }) {
     return noError(this);
   }
@@ -181,10 +191,11 @@ class _$NoError implements NoError {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(NoError value)? noError,
-    TResult? Function(Network value)? network,
-    TResult? Function(NotFound value)? notFound,
-    TResult? Function(Server value)? server,
-    TResult? Function(Unknown value)? unknown,
+    TResult? Function(NetworkError value)? networkError,
+    TResult? Function(NotFoundError value)? notFoundError,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(UpdateError value)? updateError,
+    TResult? Function(UnknownError value)? unknownError,
   }) {
     return noError?.call(this);
   }
@@ -193,10 +204,11 @@ class _$NoError implements NoError {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NoError value)? noError,
-    TResult Function(Network value)? network,
-    TResult Function(NotFound value)? notFound,
-    TResult Function(Server value)? server,
-    TResult Function(Unknown value)? unknown,
+    TResult Function(NetworkError value)? networkError,
+    TResult Function(NotFoundError value)? notFoundError,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(UpdateError value)? updateError,
+    TResult Function(UnknownError value)? unknownError,
     required TResult orElse(),
   }) {
     if (noError != null) {
@@ -211,33 +223,35 @@ abstract class NoError implements ErrorStatus {
 }
 
 /// @nodoc
-abstract class _$$NetworkCopyWith<$Res> {
-  factory _$$NetworkCopyWith(_$Network value, $Res Function(_$Network) then) =
-      __$$NetworkCopyWithImpl<$Res>;
+abstract class _$$NetworkErrorCopyWith<$Res> {
+  factory _$$NetworkErrorCopyWith(
+          _$NetworkError value, $Res Function(_$NetworkError) then) =
+      __$$NetworkErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$NetworkCopyWithImpl<$Res>
-    extends _$ErrorStatusCopyWithImpl<$Res, _$Network>
-    implements _$$NetworkCopyWith<$Res> {
-  __$$NetworkCopyWithImpl(_$Network _value, $Res Function(_$Network) _then)
+class __$$NetworkErrorCopyWithImpl<$Res>
+    extends _$ErrorStatusCopyWithImpl<$Res, _$NetworkError>
+    implements _$$NetworkErrorCopyWith<$Res> {
+  __$$NetworkErrorCopyWithImpl(
+      _$NetworkError _value, $Res Function(_$NetworkError) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$Network implements Network {
-  const _$Network();
+class _$NetworkError implements NetworkError {
+  const _$NetworkError();
 
   @override
   String toString() {
-    return 'ErrorStatus.network()';
+    return 'ErrorStatus.networkError()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Network);
+        (other.runtimeType == runtimeType && other is _$NetworkError);
   }
 
   @override
@@ -247,38 +261,41 @@ class _$Network implements Network {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() noError,
-    required TResult Function() network,
-    required TResult Function() notFound,
-    required TResult Function() server,
-    required TResult Function() unknown,
+    required TResult Function() networkError,
+    required TResult Function() notFoundError,
+    required TResult Function() serverError,
+    required TResult Function() updateError,
+    required TResult Function() unknownError,
   }) {
-    return network();
+    return networkError();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? noError,
-    TResult? Function()? network,
-    TResult? Function()? notFound,
-    TResult? Function()? server,
-    TResult? Function()? unknown,
+    TResult? Function()? networkError,
+    TResult? Function()? notFoundError,
+    TResult? Function()? serverError,
+    TResult? Function()? updateError,
+    TResult? Function()? unknownError,
   }) {
-    return network?.call();
+    return networkError?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? noError,
-    TResult Function()? network,
-    TResult Function()? notFound,
-    TResult Function()? server,
-    TResult Function()? unknown,
+    TResult Function()? networkError,
+    TResult Function()? notFoundError,
+    TResult Function()? serverError,
+    TResult Function()? updateError,
+    TResult Function()? unknownError,
     required TResult orElse(),
   }) {
-    if (network != null) {
-      return network();
+    if (networkError != null) {
+      return networkError();
     }
     return orElse();
   }
@@ -287,76 +304,80 @@ class _$Network implements Network {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(NoError value) noError,
-    required TResult Function(Network value) network,
-    required TResult Function(NotFound value) notFound,
-    required TResult Function(Server value) server,
-    required TResult Function(Unknown value) unknown,
+    required TResult Function(NetworkError value) networkError,
+    required TResult Function(NotFoundError value) notFoundError,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(UpdateError value) updateError,
+    required TResult Function(UnknownError value) unknownError,
   }) {
-    return network(this);
+    return networkError(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(NoError value)? noError,
-    TResult? Function(Network value)? network,
-    TResult? Function(NotFound value)? notFound,
-    TResult? Function(Server value)? server,
-    TResult? Function(Unknown value)? unknown,
+    TResult? Function(NetworkError value)? networkError,
+    TResult? Function(NotFoundError value)? notFoundError,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(UpdateError value)? updateError,
+    TResult? Function(UnknownError value)? unknownError,
   }) {
-    return network?.call(this);
+    return networkError?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NoError value)? noError,
-    TResult Function(Network value)? network,
-    TResult Function(NotFound value)? notFound,
-    TResult Function(Server value)? server,
-    TResult Function(Unknown value)? unknown,
+    TResult Function(NetworkError value)? networkError,
+    TResult Function(NotFoundError value)? notFoundError,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(UpdateError value)? updateError,
+    TResult Function(UnknownError value)? unknownError,
     required TResult orElse(),
   }) {
-    if (network != null) {
-      return network(this);
+    if (networkError != null) {
+      return networkError(this);
     }
     return orElse();
   }
 }
 
-abstract class Network implements ErrorStatus {
-  const factory Network() = _$Network;
+abstract class NetworkError implements ErrorStatus {
+  const factory NetworkError() = _$NetworkError;
 }
 
 /// @nodoc
-abstract class _$$NotFoundCopyWith<$Res> {
-  factory _$$NotFoundCopyWith(
-          _$NotFound value, $Res Function(_$NotFound) then) =
-      __$$NotFoundCopyWithImpl<$Res>;
+abstract class _$$NotFoundErrorCopyWith<$Res> {
+  factory _$$NotFoundErrorCopyWith(
+          _$NotFoundError value, $Res Function(_$NotFoundError) then) =
+      __$$NotFoundErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$NotFoundCopyWithImpl<$Res>
-    extends _$ErrorStatusCopyWithImpl<$Res, _$NotFound>
-    implements _$$NotFoundCopyWith<$Res> {
-  __$$NotFoundCopyWithImpl(_$NotFound _value, $Res Function(_$NotFound) _then)
+class __$$NotFoundErrorCopyWithImpl<$Res>
+    extends _$ErrorStatusCopyWithImpl<$Res, _$NotFoundError>
+    implements _$$NotFoundErrorCopyWith<$Res> {
+  __$$NotFoundErrorCopyWithImpl(
+      _$NotFoundError _value, $Res Function(_$NotFoundError) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$NotFound implements NotFound {
-  const _$NotFound();
+class _$NotFoundError implements NotFoundError {
+  const _$NotFoundError();
 
   @override
   String toString() {
-    return 'ErrorStatus.notFound()';
+    return 'ErrorStatus.notFoundError()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$NotFound);
+        (other.runtimeType == runtimeType && other is _$NotFoundError);
   }
 
   @override
@@ -366,38 +387,41 @@ class _$NotFound implements NotFound {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() noError,
-    required TResult Function() network,
-    required TResult Function() notFound,
-    required TResult Function() server,
-    required TResult Function() unknown,
+    required TResult Function() networkError,
+    required TResult Function() notFoundError,
+    required TResult Function() serverError,
+    required TResult Function() updateError,
+    required TResult Function() unknownError,
   }) {
-    return notFound();
+    return notFoundError();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? noError,
-    TResult? Function()? network,
-    TResult? Function()? notFound,
-    TResult? Function()? server,
-    TResult? Function()? unknown,
+    TResult? Function()? networkError,
+    TResult? Function()? notFoundError,
+    TResult? Function()? serverError,
+    TResult? Function()? updateError,
+    TResult? Function()? unknownError,
   }) {
-    return notFound?.call();
+    return notFoundError?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? noError,
-    TResult Function()? network,
-    TResult Function()? notFound,
-    TResult Function()? server,
-    TResult Function()? unknown,
+    TResult Function()? networkError,
+    TResult Function()? notFoundError,
+    TResult Function()? serverError,
+    TResult Function()? updateError,
+    TResult Function()? unknownError,
     required TResult orElse(),
   }) {
-    if (notFound != null) {
-      return notFound();
+    if (notFoundError != null) {
+      return notFoundError();
     }
     return orElse();
   }
@@ -406,75 +430,80 @@ class _$NotFound implements NotFound {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(NoError value) noError,
-    required TResult Function(Network value) network,
-    required TResult Function(NotFound value) notFound,
-    required TResult Function(Server value) server,
-    required TResult Function(Unknown value) unknown,
+    required TResult Function(NetworkError value) networkError,
+    required TResult Function(NotFoundError value) notFoundError,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(UpdateError value) updateError,
+    required TResult Function(UnknownError value) unknownError,
   }) {
-    return notFound(this);
+    return notFoundError(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(NoError value)? noError,
-    TResult? Function(Network value)? network,
-    TResult? Function(NotFound value)? notFound,
-    TResult? Function(Server value)? server,
-    TResult? Function(Unknown value)? unknown,
+    TResult? Function(NetworkError value)? networkError,
+    TResult? Function(NotFoundError value)? notFoundError,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(UpdateError value)? updateError,
+    TResult? Function(UnknownError value)? unknownError,
   }) {
-    return notFound?.call(this);
+    return notFoundError?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NoError value)? noError,
-    TResult Function(Network value)? network,
-    TResult Function(NotFound value)? notFound,
-    TResult Function(Server value)? server,
-    TResult Function(Unknown value)? unknown,
+    TResult Function(NetworkError value)? networkError,
+    TResult Function(NotFoundError value)? notFoundError,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(UpdateError value)? updateError,
+    TResult Function(UnknownError value)? unknownError,
     required TResult orElse(),
   }) {
-    if (notFound != null) {
-      return notFound(this);
+    if (notFoundError != null) {
+      return notFoundError(this);
     }
     return orElse();
   }
 }
 
-abstract class NotFound implements ErrorStatus {
-  const factory NotFound() = _$NotFound;
+abstract class NotFoundError implements ErrorStatus {
+  const factory NotFoundError() = _$NotFoundError;
 }
 
 /// @nodoc
-abstract class _$$ServerCopyWith<$Res> {
-  factory _$$ServerCopyWith(_$Server value, $Res Function(_$Server) then) =
-      __$$ServerCopyWithImpl<$Res>;
+abstract class _$$ServerErrorCopyWith<$Res> {
+  factory _$$ServerErrorCopyWith(
+          _$ServerError value, $Res Function(_$ServerError) then) =
+      __$$ServerErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ServerCopyWithImpl<$Res>
-    extends _$ErrorStatusCopyWithImpl<$Res, _$Server>
-    implements _$$ServerCopyWith<$Res> {
-  __$$ServerCopyWithImpl(_$Server _value, $Res Function(_$Server) _then)
+class __$$ServerErrorCopyWithImpl<$Res>
+    extends _$ErrorStatusCopyWithImpl<$Res, _$ServerError>
+    implements _$$ServerErrorCopyWith<$Res> {
+  __$$ServerErrorCopyWithImpl(
+      _$ServerError _value, $Res Function(_$ServerError) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$Server implements Server {
-  const _$Server();
+class _$ServerError implements ServerError {
+  const _$ServerError();
 
   @override
   String toString() {
-    return 'ErrorStatus.server()';
+    return 'ErrorStatus.serverError()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Server);
+        (other.runtimeType == runtimeType && other is _$ServerError);
   }
 
   @override
@@ -484,38 +513,41 @@ class _$Server implements Server {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() noError,
-    required TResult Function() network,
-    required TResult Function() notFound,
-    required TResult Function() server,
-    required TResult Function() unknown,
+    required TResult Function() networkError,
+    required TResult Function() notFoundError,
+    required TResult Function() serverError,
+    required TResult Function() updateError,
+    required TResult Function() unknownError,
   }) {
-    return server();
+    return serverError();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? noError,
-    TResult? Function()? network,
-    TResult? Function()? notFound,
-    TResult? Function()? server,
-    TResult? Function()? unknown,
+    TResult? Function()? networkError,
+    TResult? Function()? notFoundError,
+    TResult? Function()? serverError,
+    TResult? Function()? updateError,
+    TResult? Function()? unknownError,
   }) {
-    return server?.call();
+    return serverError?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? noError,
-    TResult Function()? network,
-    TResult Function()? notFound,
-    TResult Function()? server,
-    TResult Function()? unknown,
+    TResult Function()? networkError,
+    TResult Function()? notFoundError,
+    TResult Function()? serverError,
+    TResult Function()? updateError,
+    TResult Function()? unknownError,
     required TResult orElse(),
   }) {
-    if (server != null) {
-      return server();
+    if (serverError != null) {
+      return serverError();
     }
     return orElse();
   }
@@ -524,75 +556,80 @@ class _$Server implements Server {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(NoError value) noError,
-    required TResult Function(Network value) network,
-    required TResult Function(NotFound value) notFound,
-    required TResult Function(Server value) server,
-    required TResult Function(Unknown value) unknown,
+    required TResult Function(NetworkError value) networkError,
+    required TResult Function(NotFoundError value) notFoundError,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(UpdateError value) updateError,
+    required TResult Function(UnknownError value) unknownError,
   }) {
-    return server(this);
+    return serverError(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(NoError value)? noError,
-    TResult? Function(Network value)? network,
-    TResult? Function(NotFound value)? notFound,
-    TResult? Function(Server value)? server,
-    TResult? Function(Unknown value)? unknown,
+    TResult? Function(NetworkError value)? networkError,
+    TResult? Function(NotFoundError value)? notFoundError,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(UpdateError value)? updateError,
+    TResult? Function(UnknownError value)? unknownError,
   }) {
-    return server?.call(this);
+    return serverError?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NoError value)? noError,
-    TResult Function(Network value)? network,
-    TResult Function(NotFound value)? notFound,
-    TResult Function(Server value)? server,
-    TResult Function(Unknown value)? unknown,
+    TResult Function(NetworkError value)? networkError,
+    TResult Function(NotFoundError value)? notFoundError,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(UpdateError value)? updateError,
+    TResult Function(UnknownError value)? unknownError,
     required TResult orElse(),
   }) {
-    if (server != null) {
-      return server(this);
+    if (serverError != null) {
+      return serverError(this);
     }
     return orElse();
   }
 }
 
-abstract class Server implements ErrorStatus {
-  const factory Server() = _$Server;
+abstract class ServerError implements ErrorStatus {
+  const factory ServerError() = _$ServerError;
 }
 
 /// @nodoc
-abstract class _$$UnknownCopyWith<$Res> {
-  factory _$$UnknownCopyWith(_$Unknown value, $Res Function(_$Unknown) then) =
-      __$$UnknownCopyWithImpl<$Res>;
+abstract class _$$UpdateErrorCopyWith<$Res> {
+  factory _$$UpdateErrorCopyWith(
+          _$UpdateError value, $Res Function(_$UpdateError) then) =
+      __$$UpdateErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UnknownCopyWithImpl<$Res>
-    extends _$ErrorStatusCopyWithImpl<$Res, _$Unknown>
-    implements _$$UnknownCopyWith<$Res> {
-  __$$UnknownCopyWithImpl(_$Unknown _value, $Res Function(_$Unknown) _then)
+class __$$UpdateErrorCopyWithImpl<$Res>
+    extends _$ErrorStatusCopyWithImpl<$Res, _$UpdateError>
+    implements _$$UpdateErrorCopyWith<$Res> {
+  __$$UpdateErrorCopyWithImpl(
+      _$UpdateError _value, $Res Function(_$UpdateError) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$Unknown implements Unknown {
-  const _$Unknown();
+class _$UpdateError implements UpdateError {
+  const _$UpdateError();
 
   @override
   String toString() {
-    return 'ErrorStatus.unknown()';
+    return 'ErrorStatus.updateError()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Unknown);
+        (other.runtimeType == runtimeType && other is _$UpdateError);
   }
 
   @override
@@ -602,38 +639,41 @@ class _$Unknown implements Unknown {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() noError,
-    required TResult Function() network,
-    required TResult Function() notFound,
-    required TResult Function() server,
-    required TResult Function() unknown,
+    required TResult Function() networkError,
+    required TResult Function() notFoundError,
+    required TResult Function() serverError,
+    required TResult Function() updateError,
+    required TResult Function() unknownError,
   }) {
-    return unknown();
+    return updateError();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? noError,
-    TResult? Function()? network,
-    TResult? Function()? notFound,
-    TResult? Function()? server,
-    TResult? Function()? unknown,
+    TResult? Function()? networkError,
+    TResult? Function()? notFoundError,
+    TResult? Function()? serverError,
+    TResult? Function()? updateError,
+    TResult? Function()? unknownError,
   }) {
-    return unknown?.call();
+    return updateError?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? noError,
-    TResult Function()? network,
-    TResult Function()? notFound,
-    TResult Function()? server,
-    TResult Function()? unknown,
+    TResult Function()? networkError,
+    TResult Function()? notFoundError,
+    TResult Function()? serverError,
+    TResult Function()? updateError,
+    TResult Function()? unknownError,
     required TResult orElse(),
   }) {
-    if (unknown != null) {
-      return unknown();
+    if (updateError != null) {
+      return updateError();
     }
     return orElse();
   }
@@ -642,43 +682,172 @@ class _$Unknown implements Unknown {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(NoError value) noError,
-    required TResult Function(Network value) network,
-    required TResult Function(NotFound value) notFound,
-    required TResult Function(Server value) server,
-    required TResult Function(Unknown value) unknown,
+    required TResult Function(NetworkError value) networkError,
+    required TResult Function(NotFoundError value) notFoundError,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(UpdateError value) updateError,
+    required TResult Function(UnknownError value) unknownError,
   }) {
-    return unknown(this);
+    return updateError(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(NoError value)? noError,
-    TResult? Function(Network value)? network,
-    TResult? Function(NotFound value)? notFound,
-    TResult? Function(Server value)? server,
-    TResult? Function(Unknown value)? unknown,
+    TResult? Function(NetworkError value)? networkError,
+    TResult? Function(NotFoundError value)? notFoundError,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(UpdateError value)? updateError,
+    TResult? Function(UnknownError value)? unknownError,
   }) {
-    return unknown?.call(this);
+    return updateError?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NoError value)? noError,
-    TResult Function(Network value)? network,
-    TResult Function(NotFound value)? notFound,
-    TResult Function(Server value)? server,
-    TResult Function(Unknown value)? unknown,
+    TResult Function(NetworkError value)? networkError,
+    TResult Function(NotFoundError value)? notFoundError,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(UpdateError value)? updateError,
+    TResult Function(UnknownError value)? unknownError,
     required TResult orElse(),
   }) {
-    if (unknown != null) {
-      return unknown(this);
+    if (updateError != null) {
+      return updateError(this);
     }
     return orElse();
   }
 }
 
-abstract class Unknown implements ErrorStatus {
-  const factory Unknown() = _$Unknown;
+abstract class UpdateError implements ErrorStatus {
+  const factory UpdateError() = _$UpdateError;
+}
+
+/// @nodoc
+abstract class _$$UnknownErrorCopyWith<$Res> {
+  factory _$$UnknownErrorCopyWith(
+          _$UnknownError value, $Res Function(_$UnknownError) then) =
+      __$$UnknownErrorCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UnknownErrorCopyWithImpl<$Res>
+    extends _$ErrorStatusCopyWithImpl<$Res, _$UnknownError>
+    implements _$$UnknownErrorCopyWith<$Res> {
+  __$$UnknownErrorCopyWithImpl(
+      _$UnknownError _value, $Res Function(_$UnknownError) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UnknownError implements UnknownError {
+  const _$UnknownError();
+
+  @override
+  String toString() {
+    return 'ErrorStatus.unknownError()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$UnknownError);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() noError,
+    required TResult Function() networkError,
+    required TResult Function() notFoundError,
+    required TResult Function() serverError,
+    required TResult Function() updateError,
+    required TResult Function() unknownError,
+  }) {
+    return unknownError();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? noError,
+    TResult? Function()? networkError,
+    TResult? Function()? notFoundError,
+    TResult? Function()? serverError,
+    TResult? Function()? updateError,
+    TResult? Function()? unknownError,
+  }) {
+    return unknownError?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? noError,
+    TResult Function()? networkError,
+    TResult Function()? notFoundError,
+    TResult Function()? serverError,
+    TResult Function()? updateError,
+    TResult Function()? unknownError,
+    required TResult orElse(),
+  }) {
+    if (unknownError != null) {
+      return unknownError();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NoError value) noError,
+    required TResult Function(NetworkError value) networkError,
+    required TResult Function(NotFoundError value) notFoundError,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(UpdateError value) updateError,
+    required TResult Function(UnknownError value) unknownError,
+  }) {
+    return unknownError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NoError value)? noError,
+    TResult? Function(NetworkError value)? networkError,
+    TResult? Function(NotFoundError value)? notFoundError,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(UpdateError value)? updateError,
+    TResult? Function(UnknownError value)? unknownError,
+  }) {
+    return unknownError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NoError value)? noError,
+    TResult Function(NetworkError value)? networkError,
+    TResult Function(NotFoundError value)? notFoundError,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(UpdateError value)? updateError,
+    TResult Function(UnknownError value)? unknownError,
+    required TResult orElse(),
+  }) {
+    if (unknownError != null) {
+      return unknownError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UnknownError implements ErrorStatus {
+  const factory UnknownError() = _$UnknownError;
 }
