@@ -10,15 +10,10 @@ class ErrorHandler {
 
   /// throwするException
   Exception throwException(DioError error) {
-    debugPrint('======error======');
-    debugPrint('errorType:${error.type}');
-    debugPrint('statusCode:${error.response?.statusCode}');
-    debugPrint('================');
     if (error.type == DioErrorType.connectionTimeout ||
         error.type == DioErrorType.receiveTimeout ||
         error.type == DioErrorType.sendTimeout ||
-        error.type == DioErrorType.connectionError ||
-        error.type == DioErrorType.badResponse
+        error.type == DioErrorType.connectionError
     ) {
       // 圏外などのネットワークエラー
       AppSnackBar.show(NetworkErrorException().msg);
@@ -32,8 +27,10 @@ class ErrorHandler {
     } else if(error.response?.statusCode == 504){
       throw ServerErrorException();
     } else if(error.response?.statusCode == 508){
-      // 何か特殊なステータスコードが帰ってくることを想定
       throw UpdateErrorException();
+    } else if(error.type == DioErrorType.badResponse){
+      AppSnackBar.show(NetworkErrorException().msg);
+      throw NetworkErrorException();
     } else {
       //上記以外は想定していないためとりあえずExceptionを返す
       throw Exception();

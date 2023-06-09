@@ -7,9 +7,6 @@ import 'package:retrofit/http.dart';
 import '../dio/app_dio.dart';
 import '../response/coffee/response.dart';
 
-
-
-
 part 'api_client.g.dart';
 
 final apiClientProvider = Provider<ApiClient>((ref){

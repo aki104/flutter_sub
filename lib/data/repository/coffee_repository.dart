@@ -28,7 +28,7 @@ class CoffeeRepositoryImpl implements CoffeeRepository {
         ? _client.fetchHotCoffee()
         : _client.fetchIceCoffee();
     final response = await fetch
-        .then((data) => success(data))
+        .then((data) => Result<List<CoffeeDataRes>>.success(data))
         .catchError((error) => Result<List<CoffeeDataRes>>.failure(error));
     response.when(success: (res) {
       final list = <CoffeeModel>[];

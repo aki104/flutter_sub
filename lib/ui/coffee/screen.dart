@@ -21,38 +21,38 @@ class CoffeeListScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(coffeeUiModelProvider);
-    final notifier = ref.read(coffeeEventProvider);
+    final event = ref.read(coffeeEventProvider);
     final data = state.data;
 
     return BaseLayout(
-        appBar: const DefaultAppBar(
-          headerTitle: 'コーヒー画面',
-        ),
-        onInit: notifier.onCreate,
-        isLoading: state.isLoading,
-        body: ListView.builder(
-          physics: const BouncingScrollPhysics(),
-          itemCount: data.length,
-          itemBuilder: (context, index) {
-            return
-               Container(
-                    margin:
-                        const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
-                        border: Border.all(color: Colors.black45)),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(data[index].title ?? ''),
-                        Text(data[index].description ?? ''),
-                      ],
-                    ),
-                  );
-
-          },
-        ));
+      appBar: const DefaultAppBar(
+        headerTitle: 'コーヒー画面',
+      ),
+      onInit: event.onCreate,
+      onReload: event.reload,
+      isLoading: state.isLoading,
+      errorStatus: state.error,
+      isPullTo: true,
+      body: ListView.builder(
+        physics: const BouncingScrollPhysics(),
+        itemCount: data.length,
+        itemBuilder: (context, index) {
+          return Container(
+            margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: Colors.black45)),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(data[index].title ?? ''),
+                Text(data[index].description ?? ''),
+              ],
+            ),
+          );
+        },
+      ),
+    );
   }
 }

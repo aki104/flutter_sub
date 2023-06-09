@@ -3,8 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mbo/util/navigator/page_navigator.dart';
 
 import '../../component/widget/space.dart';
-import '../../provider/app_state/notifier.dart';
 import '../coffee/screen.dart';
+import '../error_test/screen.dart';
 import '../profile/screen.dart';
 
 class HomeScreen extends ConsumerWidget {
@@ -12,7 +12,6 @@ class HomeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final appNotifier = ref.read(appStateProvider.notifier);
     return Scaffold(
       body: Center(
         child: Column(
@@ -22,24 +21,19 @@ class HomeScreen extends ConsumerWidget {
                 onPressed: () {
                   PageNavigator.push(context: context, widget: const ProfileScreen());
                 },
-                child: const Text('プロフィール画面へ')),
+                child: const Text('スタブテスト')),
             TextButton(
                 onPressed: () {
                 PageNavigator.push(context: context, widget: const CoffeeListScreen());
                 },
-                child: const Text('コーヒーデータ取得')),
+                child: const Text('APIテスト')),
 
             TextButton(
                 onPressed: () {
-
+                  PageNavigator.push(context: context, widget: const ErrorTestScreen());
                 },
-                child: const Text('メンテナンス中')),
+                child: const Text('APIエラーテスト')),
             const Space(),
-            TextButton(
-                onPressed: () {
-                  appNotifier.forcedUpdateMode();
-                },
-                child: const Text('強制アップデート')),
           ],
         ),
       ),

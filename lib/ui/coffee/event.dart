@@ -44,6 +44,6 @@ class CoffeeEventHandler implements EventHandler{
   @override
   Future<void> reload([value]) async {
     _coffeeStateNotifier.onDataLoading();
-    await load();
+    await load(CoffeeType.hot);
   }
 }
