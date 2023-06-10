@@ -34,6 +34,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
     ///アプリの初期処理はここで///
     print('envTest: ${dotenv.get('TEST')}');
     ref.read(appInfoProvider).getAppInfo(); //アプリ、デバイス情報取得
+    MediaQuery.of(NavigationKey.navigationKey.currentContext!).size;
     SizeConfig.init(
         NavigationKey.navigationKey.currentContext?.screenSize); //画面サイズ取得
     ///========================///

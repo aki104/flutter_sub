@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mbo/util/design/size_config.dart';
 
 import '../../const/color.dart';
 
@@ -19,9 +20,9 @@ TextStyle textStyle(List<TextStyle> styles) {
 }
 
 ///ヘッダーのテキストスタイル
-const List<TextStyle> headerStyle = [
+ List<TextStyle> headerStyle = [
   bold,
-  fontSize16,
+  rSize16,
 ];
 
 ///以下TextStyle一覧
@@ -32,4 +33,7 @@ const TextStyle bold = TextStyle(fontWeight: FontWeight.bold);
 const TextStyle white = TextStyle(color: AppColor.white);
 const TextStyle pink100 = TextStyle(color: AppColor.pink100);
 const TextStyle colorTransparent = TextStyle(color: Colors.transparent);
+
+///レスポンシブ対応したTextStyle
+TextStyle rSize16 = TextStyle(fontSize: 16.d);
 

@@ -24,17 +24,6 @@ class UserRepositoryImpl implements UserRepository {
 
   @override
   Future<void> fetchUserData() async {
-    // final response = await _client
-    //     .fetchUser()
-    //     .then((data) => Result<UserDataRes>.success(data))
-    //     .catchError((error) => Result<UserDataRes>.failure(error));
-    //  response.when(success: (res){
-    //   final data = UserModel.fromUserModel(data: res);
-    //    _userModelNotifier.setData(data);
-    // }, failure: (error){
-    //   throw ErrorHandler().throwException(error);
-    // });
-
     ///スタブ取得
     final json = await loadJson(Stub.user.path);
     final res = UserDataRes.fromJson(json['data']);

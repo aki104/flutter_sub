@@ -17,25 +17,59 @@ class SizeConfig {
   ///端末のheight
   static double? height;
 
-  ///比率
-  static double ratio = 1.0;
+  ///比率(Width)
+  static double ratioW = 1.0;
+
+  ///比率(Height)
+  static double ratioH = 1.0;
+
+  ///比率(display)
+  static double ratioD = 1.0;
 
   static void init(Size? size) {
     width = size?.width ?? baseWidth;
     height = size?.height ?? baseHeight;
-    final deviceRatio = size != null ? ((size.width/baseWidth) + (size.height/baseHeight))/2 : 1;
-    ratio = double.parse(deviceRatio.toStringAsFixed(2));
+    final deviceRatioW = size != null ? size.width/baseWidth : 1;
+    final deviceRatioH = size != null ? size.height/baseHeight : 1;
+    final deviceRatioD = size != null ? ((size.width/baseWidth)+(size.height/baseHeight))/2 : 1;
+    ratioW = double.parse(deviceRatioW.toStringAsFixed(2));
+    ratioH = double.parse(deviceRatioH.toStringAsFixed(2));
+    ratioD = double.parse(deviceRatioD.toStringAsFixed(2));
   }
 }
 
-extension SizeExD on double{
-  double get r {
-    return SizeConfig.ratio*this;
+extension SizeExIW on int{
+  double get w {
+    return SizeConfig.ratioW*this;
   }
 }
 
-extension SizeExI on int{
-  double get r {
-    return SizeConfig.ratio*this;
+extension SizeExIH on int{
+  double get h {
+    return SizeConfig.ratioH*this;
+  }
+}
+
+extension SizeExID on int{
+  double get d {
+    return SizeConfig.ratioD*this;
+  }
+}
+
+extension SizeExDW on double{
+  double get w {
+    return SizeConfig.ratioW*this;
+  }
+}
+
+extension SizeExDH on double{
+  double get h {
+    return SizeConfig.ratioH*this;
+  }
+}
+
+extension SizeExDD on double{
+  double get d {
+    return SizeConfig.ratioD*this;
   }
 }

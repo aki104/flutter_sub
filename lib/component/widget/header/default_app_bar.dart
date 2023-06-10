@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mbo/util/design/size_config.dart';
 
 import '../../../util/design/text_style.dart';
 import '../../../util/navigator/page_navigator.dart';
@@ -21,7 +22,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback? onMenuPress;
 
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+  Size get preferredSize =>  Size.fromHeight(kToolbarHeight.d);
 
   List<Widget> get actions {
     return [
@@ -34,7 +35,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: isLeading ? IconButton(icon: const Icon(Icons.arrow_back_ios), color: Colors.black38 , onPressed: () {PageNavigator.pop(context);}) : null,
+      leading: isLeading ? IconButton(icon: const Icon(Icons.arrow_back_ios), color: Colors.black38,iconSize: 24.d, onPressed: () {PageNavigator.pop(context);}) : null,
       title: Text(headerTitle, style: textStyle(headerStyle),),
       centerTitle: true,
       actions: actions,
