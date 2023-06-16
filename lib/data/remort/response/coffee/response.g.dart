@@ -8,20 +8,18 @@ part of 'response.dart';
 
 CoffeeDataRes _$CoffeeDataResFromJson(Map<String, dynamic> json) =>
     CoffeeDataRes(
+      postId: json['postId'] as int,
       id: json['id'] as int,
-      title: json['title'] as String,
-      description: json['description'] as String,
-      ingredients: (json['ingredients'] as List<dynamic>)
-          .map((e) => e as String)
-          .toList(),
-      image: json['image'] as String,
+      name: json['name'] as String,
+      email: json['email'] as String,
+      body: json['body'] as String,
     );
 
 Map<String, dynamic> _$CoffeeDataResToJson(CoffeeDataRes instance) =>
     <String, dynamic>{
+      'postId': instance.postId,
       'id': instance.id,
-      'title': instance.title,
-      'description': instance.description,
-      'ingredients': instance.ingredients,
-      'image': instance.image,
+      'name': instance.name,
+      'email': instance.email,
+      'body': instance.body,
     };

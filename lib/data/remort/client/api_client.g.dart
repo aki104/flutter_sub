@@ -32,7 +32,7 @@ class _ApiClient implements ApiClient {
     )
             .compose(
               _dio.options,
-              '/coffee/hot',
+              '/posts/1/comments',
               queryParameters: queryParameters,
               data: _data,
             )

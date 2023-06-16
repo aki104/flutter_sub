@@ -17,11 +17,10 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$CoffeeModel {
   int get id => throw _privateConstructorUsedError;
-  String get title => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
-  List<String> get ingredients => throw _privateConstructorUsedError;
-  String get image => throw _privateConstructorUsedError;
-  CoffeeType get type => throw _privateConstructorUsedError;
+  int get postId => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  String get email => throw _privateConstructorUsedError;
+  String get body => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CoffeeModelCopyWith<CoffeeModel> get copyWith =>
@@ -34,13 +33,7 @@ abstract class $CoffeeModelCopyWith<$Res> {
           CoffeeModel value, $Res Function(CoffeeModel) then) =
       _$CoffeeModelCopyWithImpl<$Res, CoffeeModel>;
   @useResult
-  $Res call(
-      {int id,
-      String title,
-      String description,
-      List<String> ingredients,
-      String image,
-      CoffeeType type});
+  $Res call({int id, int postId, String name, String email, String body});
 }
 
 /// @nodoc
@@ -57,37 +50,32 @@ class _$CoffeeModelCopyWithImpl<$Res, $Val extends CoffeeModel>
   @override
   $Res call({
     Object? id = null,
-    Object? title = null,
-    Object? description = null,
-    Object? ingredients = null,
-    Object? image = null,
-    Object? type = null,
+    Object? postId = null,
+    Object? name = null,
+    Object? email = null,
+    Object? body = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
+      postId: null == postId
+          ? _value.postId
+          : postId // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
               as String,
-      ingredients: null == ingredients
-          ? _value.ingredients
-          : ingredients // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      image: null == image
-          ? _value.image
-          : image // ignore: cast_nullable_to_non_nullable
+      body: null == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
               as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as CoffeeType,
     ) as $Val);
   }
 }
@@ -100,13 +88,7 @@ abstract class _$$_CoffeeModelCopyWith<$Res>
       __$$_CoffeeModelCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {int id,
-      String title,
-      String description,
-      List<String> ingredients,
-      String image,
-      CoffeeType type});
+  $Res call({int id, int postId, String name, String email, String body});
 }
 
 /// @nodoc
@@ -121,37 +103,32 @@ class __$$_CoffeeModelCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? title = null,
-    Object? description = null,
-    Object? ingredients = null,
-    Object? image = null,
-    Object? type = null,
+    Object? postId = null,
+    Object? name = null,
+    Object? email = null,
+    Object? body = null,
   }) {
     return _then(_$_CoffeeModel(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
+      postId: null == postId
+          ? _value.postId
+          : postId // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
               as String,
-      ingredients: null == ingredients
-          ? _value._ingredients
-          : ingredients // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      image: null == image
-          ? _value.image
-          : image // ignore: cast_nullable_to_non_nullable
+      body: null == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
               as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as CoffeeType,
     ));
   }
 }
@@ -161,41 +138,30 @@ class __$$_CoffeeModelCopyWithImpl<$Res>
 class _$_CoffeeModel implements _CoffeeModel {
   const _$_CoffeeModel(
       {this.id = 0,
-      this.title = '',
-      this.description = '',
-      final List<String> ingredients = const [],
-      this.image = '',
-      this.type = CoffeeType.normal})
-      : _ingredients = ingredients;
+      this.postId = 0,
+      this.name = '',
+      this.email = '',
+      this.body = ''});
 
   @override
   @JsonKey()
   final int id;
   @override
   @JsonKey()
-  final String title;
+  final int postId;
   @override
   @JsonKey()
-  final String description;
-  final List<String> _ingredients;
+  final String name;
   @override
   @JsonKey()
-  List<String> get ingredients {
-    if (_ingredients is EqualUnmodifiableListView) return _ingredients;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_ingredients);
-  }
-
+  final String email;
   @override
   @JsonKey()
-  final String image;
-  @override
-  @JsonKey()
-  final CoffeeType type;
+  final String body;
 
   @override
   String toString() {
-    return 'CoffeeModel(id: $id, title: $title, description: $description, ingredients: $ingredients, image: $image, type: $type)';
+    return 'CoffeeModel(id: $id, postId: $postId, name: $name, email: $email, body: $body)';
   }
 
   @override
@@ -204,18 +170,14 @@ class _$_CoffeeModel implements _CoffeeModel {
         (other.runtimeType == runtimeType &&
             other is _$_CoffeeModel &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.title, title) || other.title == title) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            const DeepCollectionEquality()
-                .equals(other._ingredients, _ingredients) &&
-            (identical(other.image, image) || other.image == image) &&
-            (identical(other.type, type) || other.type == type));
+            (identical(other.postId, postId) || other.postId == postId) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.body, body) || other.body == body));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, title, description,
-      const DeepCollectionEquality().hash(_ingredients), image, type);
+  int get hashCode => Object.hash(runtimeType, id, postId, name, email, body);
 
   @JsonKey(ignore: true)
   @override
@@ -227,24 +189,21 @@ class _$_CoffeeModel implements _CoffeeModel {
 abstract class _CoffeeModel implements CoffeeModel {
   const factory _CoffeeModel(
       {final int id,
-      final String title,
-      final String description,
-      final List<String> ingredients,
-      final String image,
-      final CoffeeType type}) = _$_CoffeeModel;
+      final int postId,
+      final String name,
+      final String email,
+      final String body}) = _$_CoffeeModel;
 
   @override
   int get id;
   @override
-  String get title;
+  int get postId;
   @override
-  String get description;
+  String get name;
   @override
-  List<String> get ingredients;
+  String get email;
   @override
-  String get image;
-  @override
-  CoffeeType get type;
+  String get body;
   @override
   @JsonKey(ignore: true)
   _$$_CoffeeModelCopyWith<_$_CoffeeModel> get copyWith =>

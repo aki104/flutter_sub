@@ -20,7 +20,7 @@ abstract class ApiClient {
   factory ApiClient(Dio dio) = _ApiClient;
 
 
-  @GET("/coffee/hot")
+  @GET("/posts/1/comments")
   Future<List<CoffeeDataRes>> fetchHotCoffee();
 
   @GET("/coffee/iced")

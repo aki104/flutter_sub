@@ -8,11 +8,11 @@ part 'model.freezed.dart';
 class CoffeeModel with _$CoffeeModel {
   const factory CoffeeModel({
     @Default(0) int id,
-    @Default('') String title,
-    @Default('') String description,
-    @Default([]) List<String> ingredients,
-    @Default('') String image,
-    @Default(CoffeeType.normal) CoffeeType type
+    @Default(0) int postId,
+    @Default('') String name,
+    @Default('') String email,
+    @Default('') String body,
+
   }) = _CoffeeModel;
 
   factory CoffeeModel.fromCoffeeModel({
@@ -20,12 +20,11 @@ class CoffeeModel with _$CoffeeModel {
     required CoffeeType type
   }){
     return CoffeeModel(
+        postId: data.postId,
       id: data.id,
-      title: data.title,
-      description: data.description,
-      ingredients: data.ingredients,
-      image: data.image,
-      type: type
+        name: data.name,
+        email: data.email,
+        body: data.body,
     );
   }
 

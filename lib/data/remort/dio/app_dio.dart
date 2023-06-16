@@ -8,29 +8,30 @@ const AppDio._();
 static Dio customDio() {
   final options = BaseOptions(
     baseUrl: dotenv.get('BASE_URL'),
-    connectTimeout: const Duration(seconds: 5),
-    receiveTimeout: const Duration(seconds: 3),
+    connectTimeout: const Duration(seconds: 20),
+    receiveTimeout: const Duration(seconds: 20),
   );
   final customDio = Dio(options);
   // customDio.interceptors.add(LogInterceptor());
   customDio.interceptors.add(InterceptorsWrapper(
+    onRequest: (RequestOptions options, RequestInterceptorHandler handler){
+      debugPrint('===========Request LOG============');
+      debugPrint('Uri:${options.uri}');
+      debugPrint('queryParameters:${options.queryParameters}');
+      return handler.next(options);
+    },
     onResponse: (Response response, ResponseInterceptorHandler handler) {
-    debugPrint('===========API LOG============');
-    debugPrint('Uri:${response.realUri}');
+    debugPrint('===========Response LOG============');
     debugPrint('statusCode:${response.statusCode}');
     debugPrint('data:${response.data}');
-    debugPrint('==============================');
     return handler.next(response);
   },
     onError: (DioError e, ErrorInterceptorHandler handler) {
-      debugPrint('===========API Error LOG============');
-      debugPrint('uri:${e.response?.realUri}');
+      debugPrint('===========Error LOG============');
       debugPrint('statusCode:${e.response?.statusCode}');
       debugPrint('dioErrorType:${e.type}');
       debugPrint('message:${e.message}');
       debugPrint('data:${e.response?.data}');
-      debugPrint('error:${e.error.toString()}');
-      debugPrint('==============================');
       return handler.next(e);
     },
   ));

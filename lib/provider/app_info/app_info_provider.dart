@@ -48,7 +48,6 @@ class AppInfo {
       debugPrint('deviceOS: IOS');
       debugPrint('deviceId:${deviceInfo.iosInfo?.identifierForVendor ?? 'null'}');
     }
-    debugPrint('=====================');
   }
 }
 

@@ -46,8 +46,8 @@ class CoffeeListScreen extends ConsumerWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(data[index].title ?? ''),
-                Text(data[index].description ?? ''),
+                Text(data[index].name ?? ''),
+                Text(data[index].email ?? ''),
               ],
             ),
           );

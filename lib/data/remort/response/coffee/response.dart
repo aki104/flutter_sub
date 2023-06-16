@@ -5,18 +5,18 @@ part 'response.g.dart';
 ///APIから取得するユーザーデータ
 @JsonSerializable()
 class CoffeeDataRes {
+  int postId;
   int id;
-  String title;
-  String description;
-  List<String> ingredients;
-  String image;
+  String name;
+  String email;
+  String body;
 
   CoffeeDataRes({
+    required this.postId,
     required this.id,
-    required this.title,
-    required this.description,
-    required this.ingredients,
-    required this.image,
+    required this.name,
+    required this.email,
+    required this.body,
   });
 
   factory CoffeeDataRes.fromJson(Map<String, dynamic> json) =>
