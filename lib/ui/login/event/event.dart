@@ -13,15 +13,14 @@ final loginEventHandlerProvider = AutoDisposeProvider((ref) {
 });
 
 
-class LoginEventHandler extends EventHandler{
+class LoginEventHandler {
   LoginEventHandler(this._loginStateNotifier, this.ref);
 
   final LoginStateNotifier _loginStateNotifier;
   final AutoDisposeProviderRef ref;
 
   /// 初期化
-  @override
-  Future<void> onCreate([Arg? value]) async {
+  Future<void> onCreate() async {
     _loginStateNotifier.init();
   }
 
@@ -75,7 +74,5 @@ class LoginEventHandler extends EventHandler{
     _loginStateNotifier.validationCheck(mailErrorMsg, passwordErrorMsg, isCheck);
     return isCheck;
   }
-
-
 
 }

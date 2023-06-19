@@ -6,7 +6,7 @@ import '../remort/client/api_client.dart';
 import '../remort/response/user/response.dart';
 
 
-final userRepositoryProvider = AutoDisposeProvider<UserRepository>((ref){
+final userRepositoryProvider = Provider<UserRepository>((ref){
   final userModelNotifier = ref.read(userModelProvider.notifier);
   final client = ref.read(apiClientProvider);
   return UserRepositoryImpl(client, userModelNotifier);

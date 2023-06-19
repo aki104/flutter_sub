@@ -1,12 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mbo/data/repository/user_repository.dart';
-import 'package:mbo/ui/profile/notifier.dart';
 import 'package:mbo/util/error/error_handler.dart';
 
-import '../../../component/module/interface/event_handler.dart';
 import '../../data/repository/coffee_repository.dart';
-import '../../model/coffee/model.dart';
-import '../../model/coffee/model.dart';
 import 'notifier.dart';
 
 
@@ -17,33 +12,34 @@ final coffeeEventProvider = AutoDisposeProvider((ref) {
 });
 
 
-class CoffeeEventHandler implements EventHandler{
+class CoffeeEventHandler {
   CoffeeEventHandler(this._coffeeStateNotifier, this.ref, this._repository);
 
   final CoffeeUiModelStateNotifier _coffeeStateNotifier;
   final AutoDisposeProviderRef ref;
   final CoffeeRepository _repository;
 
-  @override
-  Future<void> onCreate([Arg value]) async {
-    _coffeeStateNotifier.onDataLoading();
-    await load(CoffeeType.hot);
+
+  Future<void> onCreate()async  {
+      _coffeeStateNotifier.onDataLoading();
+      await load();
   }
 
-  @override
-  Future<void> load([type]) async {
+  Future<void> load() async {
     try{
-    ///データ読み込み処理（API通信）など
-     await _repository.fetchCoffeeData(type as CoffeeType);
+     await _repository.fetchCoffeeData();
       _coffeeStateNotifier.onLoadSuccess();
     }  on Exception catch (e){
       _coffeeStateNotifier.onViewError(ErrorHandler().mapError(e));
     }
   }
 
-  @override
-  Future<void> reload([value]) async {
+  Future<void> reload() async {
     _coffeeStateNotifier.onDataLoading();
-    await load(CoffeeType.hot);
+    await load();
   }
+
+
+
+
 }

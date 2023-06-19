@@ -4,7 +4,7 @@ import 'model.dart';
 
 
 final userModelProvider =
-AutoDisposeStateNotifierProvider<UserModelStateNotifier, UserModel>((ref) {
+StateNotifierProvider<UserModelStateNotifier, UserModel>((ref) {
   return UserModelStateNotifier();
 });
 

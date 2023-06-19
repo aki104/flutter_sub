@@ -17,7 +17,6 @@ class CoffeeModel with _$CoffeeModel {
 
   factory CoffeeModel.fromCoffeeModel({
     required CoffeeDataRes data,
-    required CoffeeType type
   }){
     return CoffeeModel(
         postId: data.postId,

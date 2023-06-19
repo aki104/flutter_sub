@@ -13,7 +13,7 @@ final coffeeRepositoryProvider = AutoDisposeProvider<CoffeeRepository>((ref) {
 });
 
 abstract class CoffeeRepository {
-  Future<void> fetchCoffeeData(CoffeeType type);
+  Future<void> fetchCoffeeData();
 }
 
 class CoffeeRepositoryImpl implements CoffeeRepository {
@@ -23,17 +23,15 @@ class CoffeeRepositoryImpl implements CoffeeRepository {
   final ApiClient _client;
 
   @override
-  Future<void> fetchCoffeeData(CoffeeType type) async {
-    final fetch = type == CoffeeType.hot
-        ? _client.fetchHotCoffee()
-        : _client.fetchIceCoffee();
-    final response = await fetch
+  Future<void> fetchCoffeeData() async {
+
+    final response = await  _client.fetchHotCoffee()
         .then((data) => Result<List<CoffeeDataRes>>.success(data))
         .catchError((error) => Result<List<CoffeeDataRes>>.failure(error));
     response.when(success: (res) {
       final list = <CoffeeModel>[];
       for (var element in res) {
-        list.add(CoffeeModel.fromCoffeeModel(data: element, type: type));
+        list.add(CoffeeModel.fromCoffeeModel(data: element));
       }
       _coffeeModelNotifier.setList(list);
     }, failure: (error) {

@@ -5,6 +5,7 @@ import 'package:mbo/ui/profile/notifier.dart';
 import 'package:mbo/util/error/error_handler.dart';
 
 import '../../../component/module/interface/event_handler.dart';
+import '../../data/remort/client/api_test_client.dart';
 import 'notifier.dart';
 
 
@@ -15,21 +16,19 @@ final errorTestEventProvider = AutoDisposeProvider((ref) {
 });
 
 
-class ErrorTestEventHandler implements EventHandler{
+class ErrorTestEventHandler {
   ErrorTestEventHandler(this._errorTestStateNotifier, this.ref, this._repository);
 
   final ErrorTestUiModelStateNotifier _errorTestStateNotifier;
   final AutoDisposeProviderRef ref;
   final TestRepository _repository;
 
-  @override
-  Future<void> onCreate([Arg? value]) async {
+  Future<void> onCreate(StatusCode code) async {
     _errorTestStateNotifier.onDataLoading();
-    await load();
+    await load(code);
   }
 
-  @override
-  Future<void> load([code]) async {
+  Future<void> load(StatusCode code) async {
     try{
     ///データ読み込み処理（API通信）など
       await _repository.testErrorCode(code);
@@ -39,13 +38,12 @@ class ErrorTestEventHandler implements EventHandler{
     }
   }
 
-  @override
-  Future<void> reload([code]) async {
+  Future<void> reload(StatusCode code) async {
     _errorTestStateNotifier.onDataLoading();
     await load(code);
   }
 
-  void cansel([code]) {
+  void cansel() {
     _errorTestStateNotifier.onNoError();
   }
 }

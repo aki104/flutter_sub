@@ -8,8 +8,8 @@ const AppDio._();
 static Dio customDio() {
   final options = BaseOptions(
     baseUrl: dotenv.get('BASE_URL'),
-    connectTimeout: const Duration(seconds: 20),
-    receiveTimeout: const Duration(seconds: 20),
+    connectTimeout: const Duration(seconds: 15),
+    receiveTimeout: const Duration(seconds: 15),
   );
   final customDio = Dio(options);
   // customDio.interceptors.add(LogInterceptor());
@@ -18,6 +18,7 @@ static Dio customDio() {
       debugPrint('===========Request LOG============');
       debugPrint('Uri:${options.uri}');
       debugPrint('queryParameters:${options.queryParameters}');
+      debugPrint('data:${options.data}');
       return handler.next(options);
     },
     onResponse: (Response response, ResponseInterceptorHandler handler) {

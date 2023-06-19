@@ -13,21 +13,19 @@ final profileEventProvider = AutoDisposeProvider((ref) {
 });
 
 
-class ProfileEventHandler implements EventHandler{
+class ProfileEventHandler{
   ProfileEventHandler(this._profileStateNotifier, this.ref, this._repository);
 
   final ProfileUiModelStateNotifier _profileStateNotifier;
   final AutoDisposeProviderRef ref;
   final UserRepository _repository;
 
-  @override
-  Future<void> onCreate([Arg? value]) async {
+  Future<void> onCreate() async {
     _profileStateNotifier.onDataLoading();
     await load();
   }
 
-  @override
-  Future<void> load([value]) async {
+  Future<void> load() async {
     try{
       await _repository.fetchUserData();
       _profileStateNotifier.onLoadSuccess();
@@ -37,7 +35,7 @@ class ProfileEventHandler implements EventHandler{
   }
 
   @override
-  Future<void> reload([value]) async {
+  Future<void> reload() async {
     _profileStateNotifier.onDataLoading();
     await load();
   }

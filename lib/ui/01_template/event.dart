@@ -13,20 +13,18 @@ final xxxxEventProvider = AutoDisposeProvider((ref) {
 });
 
 
-class XxxxEventHandler implements EventHandler{
+class XxxxEventHandler {
   XxxxEventHandler(this._xxxxStateNotifier, this.ref);
 
   final XxxxUiModelStateNotifier _xxxxStateNotifier;
   final AutoDisposeProviderRef ref;
 
-  @override
-  Future<void> onCreate([Arg? value]) async {
+  Future<void> onCreate() async {
     _xxxxStateNotifier.onDataLoading();
     await load();
   }
 
-  @override
-  Future<void> load([value]) async {
+  Future<void> load() async {
     try{
     ///データ読み込み処理（API通信）など
       _xxxxStateNotifier.onLoadSuccess();
@@ -35,8 +33,7 @@ class XxxxEventHandler implements EventHandler{
     }
   }
 
-  @override
-  Future<void> reload([value]) async {
+  Future<void> reload() async {
     _xxxxStateNotifier.onDataLoading();
     await load();
   }
